@@ -16,7 +16,7 @@ export default function UserLogin() {
         body: JSON.stringify({ email }),
       });
       if (res.ok) {
-        setMessage("Link inviato! Controlla la tua email Ethereal.");
+        setMessage("Link inviato! Controlla la tua email.");
       } else {
         const data = await res.json();
         setMessage("Errore: " + (data.detail || "Errore sconosciuto"));

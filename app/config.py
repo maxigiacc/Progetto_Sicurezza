@@ -12,7 +12,7 @@ class Settings:
     MAIL_PORT = int(os.getenv("MAIL_PORT", 587))
     # app/config.py
     ALGORITHM = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES = 60
+    ACCESS_TOKEN_EXPIRE_MINUTES = 5
 
 
 settings = Settings()

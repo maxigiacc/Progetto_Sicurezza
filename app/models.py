@@ -2,6 +2,8 @@ from sqlalchemy import Column, Integer, String, DateTime, Boolean
 from datetime import datetime
 from .database import Base
 import uuid
+from pydantic import BaseModel, EmailStr
+
 
 class User(Base):
     __tablename__ = "users"
@@ -17,14 +19,13 @@ class InviteCode(Base):
     max_uses = Column(Integer, default=1)
     use_count = Column(Integer, default=0)
 
-class EmailAccount(Base):
-    __tablename__ = "email_accounts"
-    id = Column(Integer, primary_key=True, index=True)
-    email_from = Column(String, unique=True, index=True)
-    smtp_username = Column(String)
-    smtp_password = Column(String)
-    smtp_server = Column(String)
-    smtp_port = Column(Integer)
-    smtp_starttls = Column(Boolean, default=True)
-    smtp_ssl_tls = Column(Boolean, default=False)
+# Schemas
+class RegisterRequest(BaseModel):
+    email: EmailStr
+    code: str
 
+class LoginRequest(BaseModel):
+    email: EmailStr
+
+class InviteRequest(BaseModel):
+    email: EmailStr

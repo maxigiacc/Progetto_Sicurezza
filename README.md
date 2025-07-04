@@ -1,8 +1,14 @@
 # Progetto_Sicurezza
 
 
-## Lanciare il server
-
+## Lanciare il backend
+Dentro la cartella app/: 
 ```bash
-uvicorn app.main:app --reload
+python -m uvicorn app.main:app --reload
+```
+
+## Lanciare il frontend
+Dentro la cartella src/
+```bash
+npm start
 ```
