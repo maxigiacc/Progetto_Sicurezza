@@ -7,7 +7,7 @@ Dentro la cartella app/:
 python -m uvicorn app.main:app --reload
 ```
 
-## Lanciare il frontend
+## Lanciare il frontend
 Dentro la cartella src/
 ```bash
 npm start
