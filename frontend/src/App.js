@@ -11,9 +11,9 @@ export default function App() {
   return (
     <Router>
       <nav>
+        <Link to="/request-invite">Invite</Link> |{" "}
         <Link to="/">User Login</Link> |{" "}
-        <Link to="/register">User Register</Link> |{" "}
-        <Link to="/request-invite">Invite</Link>
+        <Link to="/register">User Register</Link> 
       </nav>
 
       <Routes>
