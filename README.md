@@ -118,24 +118,16 @@ pydantic
 email-validator
 ```
 
-## 📄 Licenza
-
-Distribuito sotto licenza MIT. Vedi il file `LICENSE`.
-
-## 👨‍💻 Autore
-
-Progetto sviluppato da [@maxigiacc](https://github.com/maxigiacc)
-
 
 ## 📁 Configurazione `.env`
 
-Per il corretto funzionamento dell'applicazione, è necessario creare un file `.env` nella cartella `app/` con il seguente contenuto:
+Per il corretto funzionamento dell'invio email, è necessario creare un file `.env` nella cartella `app/` con il seguente contenuto:
 
 ```
 SECRET_KEY="una_chiave_super_segreta"
-EMAIL_FROM="indirizzo_email"
-MAIL_USERNAME="indirizzo_email"
-MAIL_PASSWORD="password_per_app"
+EMAIL_FROM="la_tua_email@gmail.com"
+MAIL_USERNAME="la_tua_email@gmail.com"
+MAIL_PASSWORD="password_dell_app"
 MAIL_SERVER="smtp.gmail.com"
 MAIL_PORT=587
 MAIL_FROM_NAME="Progetto Sicurezza"
@@ -144,5 +136,45 @@ USE_CREDENTIALS=True
 VALIDATE_CERTS=True
 ```
 
+### 📧 Come ottenere `MAIL_PASSWORD` per Gmail
+
+Per usare un account Gmail in sicurezza, non devi usare la tua password normale, ma una **password per le app**:
+
+1. Vai su [https://myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
+2. Accedi con il tuo account Google
+3. Seleziona l'app (es. "Mail") e il dispositivo (es. "Altro – Progetto Sicurezza")
+4. Google genererà una password a 16 caratteri
+5. Usa quella password nel campo `MAIL_PASSWORD` del tuo `.env`
+
+> ℹ️ Le password per le app richiedono che l’autenticazione a due fattori sia attiva sul tuo account Google.
+
+### 🧪 Alternativa: usare un account **Ethereal**
+
+Puoi usare un account fittizio con [Ethereal Email](https://ethereal.email/) solo per test:
+
+1. Vai su [https://ethereal.email/create](https://ethereal.email/create)
+2. Crea un account temporaneo (ti darà username, password, host, port)
+3. Inserisci questi dati nel file `.env`:
+
+```
+EMAIL_FROM="utente@ethereal.email"
+MAIL_USERNAME="utente@ethereal.email"
+MAIL_PASSWORD="la_password"
+MAIL_SERVER="smtp.ethereal.email"
+MAIL_PORT=587
+MAIL_FROM_NAME="Progetto Sicurezza"
+MAIL_STARTTLS=True
+USE_CREDENTIALS=True
+VALIDATE_CERTS=True
+```
+> ⚠️ Ethereal serve solo per test: le email non vengono effettivamente consegnate all’utente.
 > ⚠️ Non condividere questo file pubblicamente. Assicurati di aggiungerlo a `.gitignore`.
+
+## 📄 Licenza
+
+Distribuito sotto licenza MIT. Vedi il file `LICENSE`.
+
+## 👨‍💻 Autore
+
+Progetto sviluppato da [@maxigiacc](https://github.com/maxigiacc)
 
