@@ -1,8 +1,7 @@
-# 🛡️ Progetto Sicurezza
-
+# Progetto Sicurezza
 Un'applicazione che implementa un sistema sicuro di accesso passwordless, con inviti via email e protezione tramite rate limiting e API Key.
 
-## 🚀 Funzionalità principali
+## Funzionalità principali
 
 - Richiesta invito via email
 - Registrazione con codice invito
@@ -11,7 +10,7 @@ Un'applicazione che implementa un sistema sicuro di accesso passwordless, con in
 - Accesso a risorse protette tramite JWT
 - API protette da API Key e rate limiting
 
-## 🧠 Tecnologie usate
+## Tecnologie usate
 
 ### Backend
 - FastAPI
@@ -25,7 +24,7 @@ Un'applicazione che implementa un sistema sicuro di accesso passwordless, con in
 - React Router
 - Componenti: `UserLogin`, `UserRegister`, `UserRequestInvite`
 
-## ⚙️ Installazione
+## Installazione
 
 ### Backend
 
@@ -88,7 +87,7 @@ Un'applicazione che implementa un sistema sicuro di accesso passwordless, con in
 > Tutte le richieste devono includere l’header:  
 > `Authorization: SUPERSEGRETO`
 
-## 🧪 Flusso utente
+## Flusso utente
 
 1. L’utente richiede un invito → riceve un codice via email
 2. Si registra con l’indirizzo email e il codice
@@ -96,7 +95,7 @@ Un'applicazione che implementa un sistema sicuro di accesso passwordless, con in
 4. Clicca il link → verifica il token → riceve un access token
 5. Accede a contenuti protetti con il JWT
 
-## 🔐 Sicurezza
+## Sicurezza
 
 - Rate limit per il login: 5 richieste al minuto
 - Accesso solo con codice invito
@@ -104,7 +103,7 @@ Un'applicazione che implementa un sistema sicuro di accesso passwordless, con in
 - JWT per accesso autenticato
 - Protezione tramite API Key in tutte le chiamate
 
-## 📦 Dipendenze principali
+## Dipendenze principali
 
 ```
 fastapi
@@ -117,7 +116,7 @@ email-validator
 ```
 
 
-## 📁 Configurazione `.env`
+## Configurazione `.env`
 
 Per il corretto funzionamento dell'invio email, è necessario creare un file `.env` nella cartella `app/` con il seguente contenuto:
 
@@ -134,7 +133,7 @@ USE_CREDENTIALS=True
 VALIDATE_CERTS=True
 ```
 
-### 📧 Come ottenere `MAIL_PASSWORD` per Gmail
+### Come ottenere `MAIL_PASSWORD` per Gmail
 
 Per usare un account Gmail in sicurezza, non devi usare la tua password normale, ma una **password per le app**:
 
@@ -144,11 +143,11 @@ Per usare un account Gmail in sicurezza, non devi usare la tua password normale,
 4. Google genererà una password a 16 caratteri
 5. Usa quella password nel campo `MAIL_PASSWORD` del tuo `.env`
 
-> ℹ️ Le password per le app richiedono che l’autenticazione a due fattori sia attiva sul tuo account Google.
+>  Le password per le app richiedono che l’autenticazione a due fattori sia attiva sul tuo account Google.
 
-> ⚠️ Non condividere questo file pubblicamente. Assicurati di aggiungerlo a `.gitignore`.
+>  Non condividere questo file pubblicamente. Assicurati di aggiungerlo a `.gitignore`.
 
-### 🧪 Alternativa: usare un account **Ethereal**
+### Alternativa: usare un account **Ethereal**
 
 Puoi usare un account fittizio con [Ethereal Email](https://ethereal.email/) solo per test:
 
@@ -167,14 +166,14 @@ MAIL_STARTTLS=True
 USE_CREDENTIALS=True
 VALIDATE_CERTS=True
 ```
-> ⚠️ Ethereal serve solo per test: le email non vengono effettivamente consegnate all’utente, ma visualizzate nella mailbox relativa all'utente ethereal creato.
+>  Ethereal serve solo per test: le email non vengono effettivamente consegnate all’utente, ma visualizzate nella mailbox relativa all'utente ethereal creato.
 
 
-## 📄 Licenza
+## Licenza
 
 Distribuito sotto licenza MIT. Vedi il file `LICENSE`.
 
-## 👨‍💻 Autore
+## Autore
 
 Progetto sviluppato da [@maxigiacc](https://github.com/maxigiacc)
 
