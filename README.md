@@ -1,6 +1,6 @@
 # 🛡️ Progetto Sicurezza
 
-Un'applicazione full stack (FastAPI + React) che implementa un sistema sicuro di accesso tramite magic link, con inviti via email e protezione tramite rate limiting e API Key.
+Un'applicazione che implementa un sistema sicuro di accesso passwordless, con inviti via email e protezione tramite rate limiting e API Key.
 
 ## 🚀 Funzionalità principali
 
@@ -15,8 +15,6 @@ Un'applicazione full stack (FastAPI + React) che implementa un sistema sicuro di
 
 ### Backend
 - FastAPI
-- SQLAlchemy
-- Pydantic
 - JWT (`python-jose`)
 - Rate limiting (`slowapi`)
 - Invio email personalizzato
