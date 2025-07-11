@@ -11,4 +11,4 @@ ENV/
 
 # file debug
 *.db
-./email.txt
+/email.txt
