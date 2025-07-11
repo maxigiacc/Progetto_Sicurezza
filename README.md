@@ -6,7 +6,7 @@ Un'applicazione full stack (FastAPI + React) che implementa un sistema sicuro di
 
 - Richiesta invito via email
 - Registrazione con codice invito
-- Login tramite magic link (senza password)
+- Login passwordless
 - Verifica token JWT e generazione access token
 - Accesso a risorse protette tramite JWT
 - API protette da API Key e rate limiting
