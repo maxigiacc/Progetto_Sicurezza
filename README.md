@@ -87,13 +87,25 @@ Un'applicazione che implementa un sistema sicuro di accesso passwordless, con in
 > Tutte le richieste devono includere l’header:  
 > `Authorization: SUPERSEGRETO`
 
-## Flusso utente
+## Flusso di autenticazione
 
-1. L’utente richiede un invito → riceve un codice via email
-2. Si registra con l’indirizzo email e il codice
-3. Inserisce la propria email per ricevere un magic link
-4. Clicca il link → verifica il token → riceve un access token
-5. Accede a contenuti protetti con il JWT
+### 1. Richiesta invito
+- L’utente inserisce la sua email nel frontend.
+- Il backend genera un codice casuale e lo invia tramite email.
+
+### 2. Registrazione
+- L’utente inserisce il codice ricevuto e la sua email.
+- Se valido e non scaduto, l’utente viene creato.
+
+### 3. Login magic link
+- L’utente inserisce solo l’email.
+- Il server genera un **token monouso temporaneo** (firmato con chiave segreta).
+- L’utente riceve il token via email (anche su Ethereal per test).
+
+### 4. Verifica e accesso
+- L’utente incolla il token nel frontend.
+- Il server verifica il token e restituisce un **JWT**.
+- Il JWT viene usato per accedere ad endpoint protetti.
 
 ## Sicurezza
 
@@ -102,19 +114,6 @@ Un'applicazione che implementa un sistema sicuro di accesso passwordless, con in
 - Login senza password via magic link (token temporaneo)
 - JWT per accesso autenticato
 - Protezione tramite API Key in tutte le chiamate
-
-## Dipendenze principali
-
-```
-fastapi
-uvicorn
-sqlalchemy
-slowapi
-python-jose
-pydantic
-email-validator
-```
-
 
 ## Configurazione `.env`
 
@@ -167,13 +166,3 @@ USE_CREDENTIALS=True
 VALIDATE_CERTS=True
 ```
 >  Ethereal serve solo per test: le email non vengono effettivamente consegnate all’utente, ma visualizzate nella mailbox relativa all'utente ethereal creato.
-
-
-## Licenza
-
-Distribuito sotto licenza MIT. Vedi il file `LICENSE`.
-
-## Autore
-
-Progetto sviluppato da [@maxigiacc](https://github.com/maxigiacc)
-
