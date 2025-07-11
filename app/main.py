@@ -9,10 +9,9 @@ from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
 from jose import jwt
 from datetime import datetime, timedelta
-import uuid, secrets
-from pydantic import BaseModel, EmailStr
+import secrets
 
-from . import models, database, mailer, auth
+from . import models, mailer, auth
 from .database import SessionLocal, engine
 from .config import settings
 from .auth import get_current_user
