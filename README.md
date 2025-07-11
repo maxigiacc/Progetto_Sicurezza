@@ -81,7 +81,7 @@ Un'applicazione che implementa un sistema sicuro di accesso passwordless, con in
 |--------|---------------------|------------------------------------------|
 | POST   | /request-invite     | Invia un codice invito via email         |
 | POST   | /register           | Registra l’utente con codice invito      |
-| POST   | /login              | Invia magic link per autenticazione      |
+| POST   | /login              | Invia token per autenticazione           |
 | GET    | /verify?token=...   | Verifica token e genera access token JWT |
 | GET    | /protected          | Accesso risorsa protetta con JWT         |
 
