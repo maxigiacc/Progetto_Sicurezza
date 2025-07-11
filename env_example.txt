@@ -1,0 +1,10 @@
+SECRET_KEY="una_chiave_super_segreta123"
+EMAIL_FROM="nolan39@ethereal.email"
+MAIL_USERNAME="nolan39@ethereal.email"
+MAIL_PASSWORD="DZfMxj6hfdA3YmUqK4"
+MAIL_SERVER="smtp.ethereal.email"
+MAIL_PORT=587
+MAIL_FROM_NAME="Progetto Sicurezza"
+MAIL_STARTTLS=True
+USE_CREDENTIALS=True
+VALIDATE_CERTS=True    

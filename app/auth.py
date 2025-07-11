@@ -1,16 +1,14 @@
 from itsdangerous import URLSafeTimedSerializer, BadSignature, SignatureExpired
 from .config import settings
 from fastapi import Depends, HTTPException
-from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from jose import jwt, JWTError
 from fastapi.security import OAuth2PasswordBearer
 from jose import jwt, JWTError
 from .config import settings
 
+# oggetto sicuro con scadenza temporale
+# firma HMAC con SECRET_KEY
 serializer = URLSafeTimedSerializer(settings.SECRET_KEY)
-
-security = HTTPBearer()
-
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")  # Non usato direttamente, ma serve per FastAPI
 
 def get_current_user(token: str = Depends(oauth2_scheme)):
@@ -27,7 +25,7 @@ def get_current_user(token: str = Depends(oauth2_scheme)):
 def generate_token(email: str) -> str:
     return serializer.dumps(email, salt="passwordless-login")
 
-def verify_token(token: str, max_age: int = 240) -> str:
+def verify_token(token: str, max_age: int = 300) -> str:
     try:
         email = serializer.loads(token, salt="passwordless-login", max_age=max_age)
         return email

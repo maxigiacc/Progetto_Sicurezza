@@ -72,27 +72,27 @@ export default function UserLogin() {
 
   return (
     <div style={{ maxWidth: 400, margin: "auto", fontFamily: "Arial" }}>
-      <h1>Login Magic Link - Ethereal</h1>
+      <h1>Login</h1>
       <label>
-        Email Ethereal:<br />
+        Email:<br />
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="esempio@ethereal.email"
+          placeholder="esempio@gmail.com"
           style={{ width: "100%", marginBottom: 10 }}
         />
       </label>
       <button onClick={requestMagicLink} style={{ width: "100%" }}>
-        Richiedi Magic Link
+        Richiedi Link
       </button>
 
       <hr />
 
       <label>
-        Inserisci Token Magic Link:<br />
+        Inserisci Token:<br />
         <input
-          type="text"
+          type="password"
           value={token}
           onChange={(e) => setToken(e.target.value)}
           placeholder="Token ricevuto via email"

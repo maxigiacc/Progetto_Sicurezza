@@ -43,7 +43,7 @@ export default function UserRegister() {
       <label>
         Codice Invito:<br />
         <input
-          type="text"
+          type="password"
           value={code}
           onChange={(e) => setCode(e.target.value)}
           placeholder="Inserisci codice invito"
