@@ -51,10 +51,10 @@ Un'applicazione full stack (FastAPI + React) che implementa un sistema sicuro di
    pip install -r ../requirements.txt
    ```
 
-4. Avvia il backend:
+4. Avvia il backend, nella root del progetto:
 
    ```
-   python -m uvicorn main:app --reload
+   python -m uvicorn app.main:app --reload
    ```
 
 ### Frontend
@@ -148,6 +148,8 @@ Per usare un account Gmail in sicurezza, non devi usare la tua password normale,
 
 > ℹ️ Le password per le app richiedono che l’autenticazione a due fattori sia attiva sul tuo account Google.
 
+> ⚠️ Non condividere questo file pubblicamente. Assicurati di aggiungerlo a `.gitignore`.
+
 ### 🧪 Alternativa: usare un account **Ethereal**
 
 Puoi usare un account fittizio con [Ethereal Email](https://ethereal.email/) solo per test:
@@ -167,8 +169,8 @@ MAIL_STARTTLS=True
 USE_CREDENTIALS=True
 VALIDATE_CERTS=True
 ```
-> ⚠️ Ethereal serve solo per test: le email non vengono effettivamente consegnate all’utente.
-> ⚠️ Non condividere questo file pubblicamente. Assicurati di aggiungerlo a `.gitignore`.
+> ⚠️ Ethereal serve solo per test: le email non vengono effettivamente consegnate all’utente, ma visualizzate nella mailbox relativa all'utente ethereal creato.
+
 
 ## 📄 Licenza
 
