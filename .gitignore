@@ -9,6 +9,6 @@ env/
 venv/
 ENV/
 
+# file debug
 *.db
-
-ciao.py
+./mpare.txt
