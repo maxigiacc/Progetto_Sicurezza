@@ -12,3 +12,4 @@ ENV/
 # file debug
 *.db
 /email.txt
+.DS_Store
