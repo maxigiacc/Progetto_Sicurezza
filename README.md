@@ -111,7 +111,7 @@ Un'applicazione che implementa un sistema sicuro di accesso passwordless, con in
 
 - Rate limit per il login: 5 richieste al minuto
 - Accesso solo con codice invito
-- Login senza password via magic link (token temporaneo)
+- Login passwordless con token temporaneo
 - JWT per accesso autenticato
 - Protezione tramite API Key in tutte le chiamate
 
